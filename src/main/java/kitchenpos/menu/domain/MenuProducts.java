@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.OneToMany;
-import kitchenpos.global.domain.Amount;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
@@ -41,12 +39,12 @@ public class MenuProducts {
         return new MenuProducts(menuProduct);
     }
 
-    public Amount totalAmount() {
-        List<Amount> amounts = menuProductElements.stream()
-                .map(MenuProduct::getAmount).collect(Collectors.toList());
-
-        return Amount.createSumAmounts(amounts);
-    }
+//    public Amount totalAmount() {
+//        List<Amount> amounts = menuProductElements.stream()
+//                .map(MenuProduct::getAmount).collect(Collectors.toList());
+//
+//        return Amount.createSumAmounts(amounts);
+//    }
 
     public List<MenuProduct> value() {
         return Collections.unmodifiableList(menuProductElements);

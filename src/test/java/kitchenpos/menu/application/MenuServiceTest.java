@@ -119,8 +119,8 @@ class MenuServiceTest {
     @DisplayName("메뉴가 등록 된다.")
     void createMenu() {
         //given
-        MenuProduct menuProduct1 = new MenuProduct(1L,null, product1, Quantity.from(2));
-        MenuProduct menuProduct2 = new MenuProduct(2L,null, product2, Quantity.from(1));
+        MenuProduct menuProduct1 = new MenuProduct(1L,null, 1L, Quantity.from(2));
+        MenuProduct menuProduct2 = new MenuProduct(2L,null, 2L, Quantity.from(1));
         Menu menu = new Menu(1L,"메뉴1", Price.from(2000), MenuGroup.from("메뉴 그룹"),
                 MenuProducts.from(Arrays.asList(menuProduct1, menuProduct2)));
         MenuRequest menuRequest = new MenuRequest("메뉴", menu.getPrice().value(), 1L, menuProductRequests1);
@@ -145,9 +145,9 @@ class MenuServiceTest {
     @DisplayName("메뉴 목록을 조회")
     void listMenu() {
         //given
-        MenuProduct menuProduct1 = new MenuProduct(1L, null, product1, Quantity.from(2));
-        MenuProduct menuProduct2 = new MenuProduct(2L, null, product2, Quantity.from(1));
-        MenuProduct menuProduct3 = new MenuProduct(3L, null, product1, Quantity.from(3));
+        MenuProduct menuProduct1 = new MenuProduct(1L, null, 1L, Quantity.from(2));
+        MenuProduct menuProduct2 = new MenuProduct(2L, null, 2L, Quantity.from(1));
+        MenuProduct menuProduct3 = new MenuProduct(3L, null, 3L, Quantity.from(3));
         Menu menu1 = new Menu(1L,"메뉴1", Price.from(2000), MenuGroup.from("메뉴 그룹"),
                 MenuProducts.from(Arrays.asList(menuProduct1, menuProduct2)));
         Menu menu2 = new Menu(2L,"메뉴2", Price.from(2000), MenuGroup.from("메뉴 그룹"),
@@ -169,8 +169,8 @@ class MenuServiceTest {
     @DisplayName("메뉴 단건 조회")
     void menuSearch() {
         //given
-        MenuProduct menuProduct1 = new MenuProduct(1L, null, product1, Quantity.from(2));
-        MenuProduct menuProduct2 = new MenuProduct(2L, null, product2, Quantity.from(1));
+        MenuProduct menuProduct1 = new MenuProduct(1L, null, 1L, Quantity.from(2));
+        MenuProduct menuProduct2 = new MenuProduct(2L, null, 2L, Quantity.from(1));
 
         Menu menu = new Menu(1L,"메뉴1", Price.from(2000), MenuGroup.from("메뉴 그룹"),
                 MenuProducts.from(Arrays.asList(menuProduct1, menuProduct2)));

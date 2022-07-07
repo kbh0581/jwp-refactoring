@@ -3,12 +3,11 @@ package kitchenpos.menu.application;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
-import kitchenpos.menu.dto.MenuRequest;
-import kitchenpos.menu.dto.MenuResponse;
 import kitchenpos.menu.domain.Menu;
 import kitchenpos.menu.domain.MenuGroup;
-import kitchenpos.menu.domain.MenuProduct;
 import kitchenpos.menu.domain.MenuProducts;
+import kitchenpos.menu.dto.MenuRequest;
+import kitchenpos.menu.dto.MenuResponse;
 import kitchenpos.menu.repository.MenuGroupRepository;
 import kitchenpos.menu.repository.MenuRepository;
 import kitchenpos.product.repository.ProductRepository;
@@ -43,12 +42,14 @@ public class MenuService {
     }
 
     private MenuProducts fromMenuProducts(MenuRequest menuRequest) {
-        return MenuProducts.from(menuRequest
-                .getMenuProducts()
-                .stream()
-                .map((productRequest) -> MenuProduct.of(productRepository.getOne(productRequest.getProductId()),
-                        productRequest.getQuantity()))
-                .collect(Collectors.toList()));
+        return null;
+        MenuProducts
+
+//        return MenuProducts.from(menuRequest
+//                .getMenuProducts()
+//                .stream()
+//                .map((productRequest) -> MenuProduct.of(productRepository.getOne(productRequest.getProductId()), productRequest.getQuantity()))
+//                .collect(Collectors.toList()));
     }
 
     @Transactional(readOnly = true)

@@ -41,7 +41,7 @@ public class Menu {
 
     public Menu(String name, Price price, MenuGroup menuGroup, MenuProducts menuProducts) {
         validate(name, price, menuGroup, menuProducts);
-        validatePrice(price, menuProducts.totalAmount());
+        //validatePrice(price, menuProducts.totalAmount());
         this.name = new Name(name);
         this.price = price;
         this.menuGroup = menuGroup;

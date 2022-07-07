@@ -3,8 +3,6 @@ package kitchenpos.global.domain;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
-import kitchenpos.menu.domain.MenuProduct;
-import kitchenpos.product.domain.Product;
 import org.springframework.util.ObjectUtils;
 
 public class Amount {
@@ -23,8 +21,9 @@ public class Amount {
     }
 
 
-    private Amount(Product product, Quantity quantity) {
-        this(product.getPrice(), quantity);
+
+    public static Amount from(BigDecimal price, long quantity) {
+        return new Amount(Price.from(price), Quantity.from(quantity));
     }
 
     public static Amount from(int amount) {
@@ -35,13 +34,6 @@ public class Amount {
         return new Amount(amount);
     }
 
-    public static Amount from(MenuProduct menuProduct) {
-        return new Amount(menuProduct.getProduct(), menuProduct.getQuantity());
-    }
-
-    public static Amount from(Product product, Quantity quantity) {
-        return new Amount(product.getPrice(), quantity);
-    }
 
     public static Amount createSumAmounts(List<Amount> Amounts) {
         return new Amount(Amounts.stream()
